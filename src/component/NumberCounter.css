@@ -1,0 +1,213 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  .neon-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f0 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #0f0 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #0f0 25%, transparent 25%),
+                linear-gradient(45deg, #0f0 25%, transparent 25%);
+    background-size: 100px 100px;
+    animation: neon-grid 2s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes neon-grid {
+    0% {
+      background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      background-position: 100px 100px, 100px 100px, 100px 100px, 100px 100px;
+    }
+  }
+  
+  .neon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+  
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    z-index: 2;
+  }
+  
+  .box {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    position: relative;
+    animation: neonBox 2s linear infinite, movingGradient 5s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .counter {
+    font-size: 3rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes neonBox {
+    0%, 100% {
+      box-shadow: 
+        0 0 10px #3498db,
+        0 0 20px #3498db,
+        0 0 30px #3498db,
+        0 0 40px #3498db,
+        0 0 50px #3498db,
+        0 0 60px #3498db,
+        0 0 70px #3498db;
+    }
+    25% {
+      box-shadow: 
+        0 0 10px #e74c3c,
+        0 0 20px #e74c3c,
+        0 0 30px #e74c3c,
+        0 0 40px #e74c3c,
+        0 0 50px #e74c3c,
+        0 0 60px #e74c3c,
+        0 0 70px #e74c3c;
+    }
+    50% {
+      box-shadow: 
+        0 0 10px #f1c40f,
+        0 0 20px #f1c40f,
+        0 0 30px #f1c40f,
+        0 0 40px #f1c40f,
+        0 0 50px #f1c40f,
+        0 0 60px #f1c40f,
+        0 0 70px #f1c40f;
+    }
+    75% {
+      box-shadow: 
+        0 0 10px #9b59b6,
+        0 0 20px #9b59b6,
+        0 0 30px #9b59b6,
+        0 0 40px #9b59b6,
+        0 0 50px #9b59b6,
+        0 0 60px #9b59b6,
+        0 0 70px #9b59b6;
+    }
+  }
+  
+  @keyframes movingGradient {
+    0%, 100% {
+      background: linear-gradient(45deg, #3498db, #e74c3c, #f1c40f, #9b59b6);
+      background-size: 300% 300%;
+    }
+    25% {
+      background: linear-gradient(45deg, #e74c3c, #f1c40f, #9b59b6, #3498db);
+      background-size: 300% 300%;
+    }
+    50% {
+      background: linear-gradient(45deg, #f1c40f, #9b59b6, #3498db, #e74c3c);
+      background-size: 300% 300%;
+    }
+    75% {
+      background: linear-gradient(45deg, #9b59b6, #3498db, #e74c3c, #f1c40f);
+      background-size: 300% 300%;
+    }
+  }
+  
+  .box1 {
+    animation: neonBox1 2s linear infinite, movingGradient1 5s linear infinite;
+  }
+  
+  .box2 {
+    animation: neonBox2 2s linear infinite, movingGradient2 5s linear infinite;
+  }
+  
+  .box3 {
+    animation: neonBox3 2s linear infinite, movingGradient3 5s linear infinite;
+  }
+  
+  .box4 {
+    animation: neonBox4 2s linear infinite, movingGradient4 5s linear infinite;
+  }
+  
+  @keyframes neonBox1 {
+    0%, 100% { box-shadow: 0 0 20px #3498db, 0 0 40px #3498db; }
+    25% { box-shadow: 0 0 20px #e74c3c, 0 0 40px #e74c3c; }
+    50% { box-shadow: 0 0 20px #f1c40f, 0 0 40px #f1c40f; }
+    75% { box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6; }
+  }
+  
+  @keyframes movingGradient1 {
+    0%, 100% { background: linear-gradient(45deg, #3498db, #e74c3c, #f1c40f, #9b59b6); }
+    25% { background: linear-gradient(45deg, #e74c3c, #f1c40f, #9b59b6, #3498db); }
+    50% { background: linear-gradient(45deg, #f1c40f, #9b59b6, #3498db, #e74c3c); }
+    75% { background: linear-gradient(45deg, #9b59b6, #3498db, #e74c3c, #f1c40f); }
+  }
+  
+  @keyframes neonBox2 {
+    0%, 100% { box-shadow: 0 0 20px #e74c3c, 0 0 40px #e74c3c; }
+    25% { box-shadow: 0 0 20px #8e44ad, 0 0 40px #8e44ad; }
+    50% { box-shadow: 0 0 20px #f1c40f, 0 0 40px #f1c40f; }
+    75% { box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6; }
+  }
+  
+  @keyframes movingGradient2 {
+    0%, 100% { background: linear-gradient(45deg, #e74c3c, #3498db, #f1c40f, #9b59b6); }
+    25% { background: linear-gradient(45deg, #3498db, #f1c40f, #9b59b6, #e74c3c); }
+    50% { background: linear-gradient(45deg, #f1c40f, #9b59b6, #e74c3c, #3498db); }
+    75% { background: linear-gradient(45deg, #9b59b6, #e74c3c, #3498db, #f1c40f); }
+  }
+  
+  @keyframes neonBox3 {
+    0%, 100% { box-shadow: 0 0 20px #f1c40f, 0 0 40px #f1c40f; }
+    25% { box-shadow: 0 0 20px #3498db, 0 0 40px #3498db; }
+    50% { box-shadow: 0 0 20px #e74c3c, 0 0 40px #e74c3c; }
+    75% { box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6; }
+  }
+  
+  @keyframes movingGradient3 {
+    0%, 100% { background: linear-gradient(45deg, #f1c40f, #9b59b6, #e74c3c, #3498db); }
+    25% { background: linear-gradient(45deg, #9b59b6, #e74c3c, #3498db, #f1c40f); }
+    50% { background: linear-gradient(45deg, #e74c3c, #3498db, #f1c40f, #9b59b6); }
+    75% { background: linear-gradient(45deg, #3498db, #f1c40f, #9b59b6, #e74c3c); }
+  }
+  
+  @keyframes neonBox4 {
+    0%, 100% { box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6; }
+    25% { box-shadow: 0 0 20px #3498db, 0 0 40px #3498db; }
+    50% { box-shadow: 0 0 20px #e74c3c, 0 0 40px #e74c3c; }
+    75% { box-shadow: 0 0 20px #f1c40f, 0 0 40px #f1c40f; }
+  }
+  
+  @keyframes movingGradient4 {
+    0%, 100% { background: linear-gradient(45deg, #9b59b6, #e74c3c, #3498db, #f1c40f); }
+    25% { background: linear-gradient(45deg, #e74c3c, #3498db, #f1c40f, #9b59b6); }
+    50% { background: linear-gradient(45deg, #3498db, #f1c40f, #9b59b6, #e74c3c); }
+    75% { background: linear-gradient(45deg, #f1c40f, #9b59b6, #e74c3c, #3498db); }
+  }
+  

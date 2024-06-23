@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import NumberCounter from './component/NumberCounter';
+import './App.css'
 
 function App() {
+  const [activeBox, setActiveBox] = useState(1);
+
+  const handleBoxClick = (boxNumber) => {
+    setActiveBox(boxNumber);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div class="neon-box">
+    <h1>Coming Soon</h1>
+  </div>
     </div>
   );
 }
